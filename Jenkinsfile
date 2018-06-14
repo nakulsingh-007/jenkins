@@ -20,7 +20,7 @@ pipeline {
 	                            "iamInstanceProfile": "ec2-s3-RO-role"
                         	],
 							httpParams:[
-								url:"http:/localhost:4321",
+								url:"http://localhost:4321",
 								path:"/v1/launchcofig",
 								method: "post"
 
@@ -38,7 +38,7 @@ pipeline {
                      
 					   
 					   httpParams:[
-                           url:"http:/localhost:4321",
+                           url:"http://localhost:4321",
                            path:"/v1/targetGroup",
                            method: "post"
                    
@@ -59,7 +59,7 @@ pipeline {
                        
 					
 				     httpParams:[
-                         url:"http:/localhost:4321",
+                         url:"http://localhost:4321",
                          path:"/v1/asg",
                          method: "post"
                 ]
@@ -78,7 +78,7 @@ pipeline {
 						   
 							
 					httpParams:[
-                        url:"http:/localhost:4321",
+                        url:"http://localhost:4321",
                         path:"/v1/elb",
                         method: "post"
 		
@@ -105,7 +105,7 @@ pipeline {
 		
 									
 					httpParams:[
-                            url:"http:/localhost:4321",
+                            url:"http://localhost:4321",
                             path:"/v1/elbListener",
                             method: "post"
 							
