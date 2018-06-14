@@ -1,4 +1,4 @@
-@Library('aliasname@master') _
+@Library('test@master')
         
 import org.k9.*
 
@@ -18,15 +18,103 @@ pipeline {
 	                            "userData": "https://s3-us-west-2.amazonaws.com/hudsonbay-test/scripts/script.sh",
 	                            "keyName": "HudsonBay-V",
 	                            "iamInstanceProfile": "ec2-s3-RO-role"
-                    ]
+                        	],
+							httpParams:[
+								url:"http:/localhost:4321",
+								path:"/v1/launchcofig",
+								method: "post"
 
-                    httpParam:[
+                        	],	
+						],
+						
+																					
+                        targetGroup: [
+                           "jsonBody": [
+                               "name": "testTG",
+                               "port": "4444",
+                               "protocol": "HTTP" ,
+                               "vpcId": "vpc-0f2c8a76"
+                           ],
+                     
+					   
+					   httpParams:[
+                           url:"http:/localhost:4321",
+                           path:"/v1/targetGroup",
+                           method: "post"
+                   
+				   ]
+				],
+					   
+				   
+                        asg: [
+                           "jsonBody": [
+                                   "autoScalingGroupName": "my-auto-scaling-group",
+                                   "launchConfigurationName": "my-launch-config",
+                                   "desiredCapacity": "1",
+                                   "maxSize": "2",
+                                   "minSize": "1",
+                                   "vpcZoneIdentifier": "subnet-4f628736",
+                                   "targetGroupARNs":["arn:aws:elasticloadbalancing:us-west-2:702599048949:targetgroup/tg-1/fd89f1ccef7aff8c"]
+                               ],
+                       
+					
+				     httpParams:[
+                         url:"http:/localhost:4321",
+                         path:"/v1/asg",
+                         method: "post"
+                ]
+							],
+				  
+
+
+                       elb :[
+                           "jsonBody": [
+                                   "name":"appELB",
+                                   "securityGroups": ["sg-879965f8"],
+                                   "subnets":["subnet-4f628736", "subnet-4787521d", "subnet-b0dfdbf8"]
+                           ]
+                     
+                       
+						   
+							
+					httpParams:[
                         url:"http:/localhost:4321",
-                        path:"/v1/launchcofig",
+                        path:"/v1/elb",
                         method: "post"
-
-]
-                    def httpObj = new http.SimpeHTTPBuilder(this,params.launchcofig)
+		
+					]
+						   ],
+						
+						
+						
+						
+							
+						elbListener: [
+                             jsonBody: [
+                               "defaultActions": [
+                                   [
+                                       "targetGroupArn": "arn:aws:elasticloadbalancing:us-west-2:702599048949:targetgroup/cool/20582d5d0f31e39e"
+                                   ]
+                               ],
+                               "loadBalancerArn":"arn:aws:elasticloadbalancing:us-west-2:702599048949:loadbalancer/app/cool/77f57bdf01ad5db1",
+                               "port": "80",
+                               "protocol":"HTTP"
+                           ]
+                    
+                         		
+		
+									
+					httpParams:[
+                            url:"http:/localhost:4321",
+                            path:"/v1/elbListener",
+                            method: "post"
+							
+							],
+											
+						],	
+						],
+													
+                    def httpObj = new http.SimpleHTTPBuilder(this,params.launchcofig)
                     httpObj.sendRequest()
                 }
             }
