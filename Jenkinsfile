@@ -115,7 +115,8 @@ pipeline {
 						],
 													
                     def httpObj = new http.SimpleHTTPBuilder(this,params.launchcofig)
-                    httpObj.sendRequest()
+                    def output = httpObj.sendRequest()
+                    echo "${output}"  
                 }
             }
         }
