@@ -15,7 +15,7 @@ pipeline {
 	                            "instanceType": "t2.micro",
 	                            "launchConfigurationName": "my-launch-config",
 	                            "securityGroups": ["sg-879965f8"],
-	                            "userData": "https://s3-us-west-2.amazonaws.com/hudsonbay-test/msp/dev/script/canary/R4/scriptViaGroovy.sh ",
+	                            "userData": "https://s3-us-west-2.amazonaws.com/hudsonbay-test/aws/dev/script/blue-green/R1/scriptViaGroovy.sh ",
 	                            "keyName": "HudsonBay-V",
 	                            "iamInstanceProfile": "ec2-s3-RO-role"
                         	],
