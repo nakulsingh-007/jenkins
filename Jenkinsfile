@@ -9,7 +9,7 @@ pipeline {
             steps {
                 script {
                     def params = [
-                        launchcofig:[
+                        launchconfig:[
                             "jsonBody":[
                             	"imageId": "ami-f2d3638a",
 	                            "instanceType": "t2.micro",
