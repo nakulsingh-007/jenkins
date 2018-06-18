@@ -40,7 +40,7 @@ pipeline {
 					   httpParams:[
                            url:"http://localhost:4321",
                            path:"/v1/targetGroup",
-                           method: "post"
+                           method: "POST"
                    
 				   ]
 				],
@@ -61,7 +61,7 @@ pipeline {
 				     httpParams:[
                          url:"http://localhost:4321",
                          path:"/v1/asg",
-                         method: "post"
+                         method: "POST"
                 ]
 							],
 				  
@@ -80,7 +80,7 @@ pipeline {
 					httpParams:[
                         url:"http://localhost:4321",
                         path:"/v1/elb",
-                        method: "post"
+                        method: "POST"
 		
 					]
 						   ],
@@ -107,7 +107,7 @@ pipeline {
 					httpParams:[
                             url:"http://localhost:4321",
                             path:"/v1/elbListener",
-                            method: "post"
+                            method: "POST"
 							
 							],
 											
