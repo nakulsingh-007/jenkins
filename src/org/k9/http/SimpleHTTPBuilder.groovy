@@ -48,7 +48,7 @@ class SimpleHTTPBuilder implements Serializable  {
                     this.script.echo "(In SimpleHTTPBuilder Res) :: ${result} ... ${result.getClass()}"
                     return result
                 } catch(Exception ex) {
-                    this.script.echo "Exception ${ex}"
+                    this.script.echo "Exception ... ${result} ... ${ex}"
                     return ['response': 'error']
                 }
             case "POST":
