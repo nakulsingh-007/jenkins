@@ -13,7 +13,7 @@ class AutoScaling implements Serializable {
         this.config = config
         // this.output = output
     }
-    def createLaunchconfig() {
+    def createLaunchConfig() {
 
     
 
