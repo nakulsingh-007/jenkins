@@ -19,6 +19,7 @@ class Utils implements Serializable {
     def createAWSResources(def asg, def elb){
         def lcOut = asg.createLaunchConfig()
         this.script.echo "${lcOut}"
+    }
         def lcOut1 = elb.createloadBalancer()
         this.script.echo "${lcout1}"
     //     if (lcOut['response'] == "success"){
@@ -27,7 +28,7 @@ class Utils implements Serializable {
     //     this.script.echo "LC error!!"
     //     status = [response: "error", msg: "LC error!!"]
     // return
-    }
+    
 }
 
       
