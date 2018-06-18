@@ -67,7 +67,7 @@ pipeline {
 				  
 
 
-                       loadbalancer :[
+                       elb :[
                            "jsonBody": [
                                    "name":"appELB",
                                    "securityGroups": ["sg-879965f8"],
