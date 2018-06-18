@@ -25,4 +25,5 @@ def lcOut4 = new http.SimpleHTTPBuilder(this.script,this.config.autoScalingGroup
 lcOut4.sendRequest()       
 
 }
+}
     
