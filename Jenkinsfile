@@ -114,9 +114,11 @@ pipeline {
 						],	
 						],
 													
-                    def httpObj = new http.SimpleHTTPBuilder(this,params.launchcofig)
-                    def output = httpObj.sendRequest()
-                    echo "${output}"  
+                  //  def httpObj = new http.SimpleHTTPBuilder(this,params.launchcofig)
+                    //def output = httpObj.sendRequest()
+                    //echo "${output}"
+                    def obj= new aws.ami.AMIDeployment(this,config)
+                     obj.deploy()  
                 }
             }
         }
