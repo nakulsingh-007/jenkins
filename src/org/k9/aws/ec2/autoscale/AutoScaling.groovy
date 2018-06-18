@@ -21,4 +21,4 @@ class AutoScaling implements Serializable {
 lcOut.sendRequest()
 
     }
-    
+}
