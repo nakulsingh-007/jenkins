@@ -19,7 +19,7 @@ class Utils implements Serializable {
     def createAWSResources(def asg, def elb){
         def lcOut = asg.createLaunchConfig()
         this.script.echo "${lcOut}"
-        def lcOut1 = elb.createloadbalancer()
+        def lcOut1 = elb.createloadBalancer()
         this.script.echo "${lcout1}"
     //     if (lcOut['response'] == "success"){
     //     this.script.echo "LC created "
