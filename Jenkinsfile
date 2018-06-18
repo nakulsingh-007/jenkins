@@ -22,7 +22,7 @@ pipeline {
 							httpParams:[
 								url:"http://localhost:4321",
 								path:"/v1/launchcofig",
-								method: "post"
+								method: "POST"
 
                         	],	
 						],
