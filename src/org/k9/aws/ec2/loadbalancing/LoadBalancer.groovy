@@ -11,4 +11,10 @@ class LoadBalancer implements Serializable {
         this.script = script
         this.config = config
     }
+
+ def createLoadBalancer() {
+        def lcOut = new http.SimpleHTTPBuilder(this.script,this.config.elb)
+        lcOut.sendRequest()
+ }
+
 }
