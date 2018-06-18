@@ -11,13 +11,13 @@ class Utils implements Serializable {
     def script
     //def output
 
-    Utils(script, config, output) {
+    Utils(script, config) {
         this.script = script
         this.config = config
       //  this.output = output
     }
     def createAWSResources(def asg, def elb){
-def lcOut =asg.createLaunchConfig()
+    def lcOut =asg.createLaunchConfig()
     }
 
       
