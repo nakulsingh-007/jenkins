@@ -21,7 +21,7 @@ class Utils implements Serializable {
         this.script.echo "${lcOut}"
     }
         def lcOut1 = elb.createloadBalancer()
-        this.script.echo "${lcout1}"
+        this.script.echo "${lcOut1}"
     //     if (lcOut['response'] == "success"){
     //     this.script.echo "LC created "
     //     }else{
