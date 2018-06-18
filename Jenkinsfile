@@ -22,7 +22,7 @@ pipeline {
 							httpParams:[
 								url:"http://localhost:4321",
 								path:"/v1/launchconfig",
-								method: "DELETE"
+								method: "POST"
 
                         	],	
 						],
@@ -40,7 +40,7 @@ pipeline {
 					   httpParams:[
                            url:"http://localhost:4321",
                            path:"/v1/targetgroup",
-                           method: "DELETE"
+                           method: "POST"
                    
 				   ]
 				],
@@ -80,7 +80,7 @@ pipeline {
 					httpParams:[
                         url:"http://localhost:4321",
                         path:"/v1/loadbalancer",
-                        method: "DELETE"
+                        method: "POST"
 		
 					]
 						   ],
