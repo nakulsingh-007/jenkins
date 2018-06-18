@@ -39,7 +39,7 @@ pipeline {
 					   
 					   httpParams:[
                            url:"http://localhost:4321",
-                           path:"/v1/targetGroup",
+                           path:"/v1/targetgroup",
                            method: "POST"
                    
 				   ]
