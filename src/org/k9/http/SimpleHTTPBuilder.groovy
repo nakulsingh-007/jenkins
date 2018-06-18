@@ -42,10 +42,10 @@ class SimpleHTTPBuilder implements Serializable  {
                         result.each { resKey, resVal ->
                             funcOutput[resKey] = resVal
                         }
-                        this.script.echo "(In SimpleHTTPBuilder Func) :: ${funcOutput.getClass()}"
+                        this.script.echo "(In SimpleHTTPBuilder Func) :: ${funcOutput} ... ${funcOutput.getClass()}"
                         return funcOutput
                     }
-                    this.script.echo "(In SimpleHTTPBuilder Res) :: ${result.getClass()}"
+                    this.script.echo "(In SimpleHTTPBuilder Res) :: ${result} ... ${result.getClass()}"
                     return result
                 } catch(Exception ex) {
                     this.script.echo "Exception ${ex}"
