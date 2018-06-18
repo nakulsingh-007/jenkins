@@ -18,6 +18,13 @@ class Utils implements Serializable {
     }
     def createAWSResources(def asg, def elb){
     def lcOut =asg.createLaunchConfig()
+    if (lcOut['response'] == "success"){
+this.script.echo "LC created "
+}else{
+this.script.echo "LC error!!"
+status = [response: "error", msg: "LC error!!"]
+return
+}
     }
 
       
