@@ -67,7 +67,7 @@ pipeline {
 				  
 
 
-                       elb :[
+                       loadbalancer :[
                            "jsonBody": [
                                    "name":"appELB",
                                    "securityGroups": ["sg-879965f8"],
@@ -79,7 +79,7 @@ pipeline {
 							
 					httpParams:[
                         url:"http://localhost:4321",
-                        path:"/v1/elb",
+                        path:"/v1/loadbalancer",
                         method: "POST"
 		
 					]
