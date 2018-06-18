@@ -20,7 +20,7 @@ class Utils implements Serializable {
         def lcOut = asg.createLaunchConfig()
         this.script.echo "${lcOut}"
     
-        def lcOut1 = elb.createloadBalancer()
+        def lcOut1 = elb.createLoadBalancer()
         this.script.echo "${lcOut1}"
     //     if (lcOut['response'] == "success"){
     //     this.script.echo "LC created "
