@@ -21,7 +21,7 @@ class LoadBalancer implements Serializable {
      
      def out=lcOut2.sendRequest()
      //this.script.echo "target group"${out}
-     return out[tgARN]
+     return out['tgARN']
      
  }
 
