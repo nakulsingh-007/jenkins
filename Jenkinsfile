@@ -107,8 +107,8 @@ pipeline {
 									
 					httpParams:[
                             url:"http://localhost:4321",
-                            path:"/v1/elbListener",
-                            method: "POST"
+                            path:"/v1/loadbalancer",
+                            method: "PUT"
 							
 							],
 											

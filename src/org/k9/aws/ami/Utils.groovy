@@ -30,6 +30,9 @@ class Utils implements Serializable {
          def asgOut = asg.createAutoscaling(tarOut)
          this.script.echo "${asgOut}"
 
+         def elblOut = asg.createLoadBalancerlistenener(lcOut1,tarOut)
+         this.script.echo "${elblOut}"
+
 
 
         
