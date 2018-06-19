@@ -60,7 +60,7 @@ pipeline {
 					
 				     httpParams:[
                          url:"http://localhost:4321",
-                         path:"/v1/asg",
+                         path:"/v1/autoscale",
                          method: "POST"
                 ]
 							],
