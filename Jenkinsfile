@@ -28,7 +28,7 @@ pipeline {
 						],
 						
 																					
-                        targetGroup: [
+                        targetgroup: [
                            "jsonBody": [
                                "name": "testTG",
                                "port": "4444",
