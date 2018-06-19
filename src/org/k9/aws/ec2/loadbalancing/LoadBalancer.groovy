@@ -28,7 +28,7 @@ class LoadBalancer implements Serializable {
  }
  def createLoadBalancerlistenener(def load, def tg ){
      this.config.elbListener['jsonBody']['loadBalancerArn'] = load
-     this.config.elbListener['jsonBody']['defaultActions'] = [['targetGroupArn':tg ]]
+     this.config.elbListener['jsonBody']['defaultActions'] = [['targetGroupArn': tg ]]
      def listOut = new http.SimpleHTTPBuilder(this.script,this.config.elbListener)
      //def in = listOut.sendRequest()
      listOut.sendRequest()
