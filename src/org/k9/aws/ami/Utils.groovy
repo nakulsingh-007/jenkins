@@ -23,7 +23,7 @@ class Utils implements Serializable {
         def lcOut1 = elb.createLoadBalancer()
         this.script.echo "${lcOut1}"
          
-         def lcOut2 = tg.createTagertGroup()
+         def lcOut2 = elb.createtagertGroup()
          this.script.echo "${lcOut2}"
 
 
