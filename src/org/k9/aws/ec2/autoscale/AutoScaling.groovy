@@ -17,12 +17,12 @@ class AutoScaling implements Serializable {
         def lcOut = new http.SimpleHTTPBuilder(this.script,this.config.launchconfig)
         lcOut.sendRequest()
     }
-     def createAutoscaling() {
+     def createAutoscaling(def output) {
       //  def funcOutput = [:]this.config.asg['jsonBody']['autoScalingGroupName'] = "${this.config.deploymentName}-${this.config.subEnv}-asg-${output.dbData.version}-${output.dbData.buildNo}"
         //this.config.asg['jsonBody']['launchConfigurationName'] = output.global.launchConfName
-       this.config.asg['jsonBody']['targetGroupARNs'] = [ output.global['tgARN'] ]
-def lcOut4 = new http.SimpleHTTPBuilder(this.script,this.config.autoScalingGroup)
-lcOut4.sendRequest()       
+       this.config.asg['jsonBody']['targetGroupARNs'] = [output]
+     def asgOut4 = new http.SimpleHTTPBuilder(this.script,this.config.asg)
+     asgOut4.sendRequest()       
 
 }
 }

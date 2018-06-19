@@ -16,12 +16,23 @@ class Utils implements Serializable {
         this.config = config
       //  this.output = output
     }
-    def createAWSResources(def asg, def elb){
+    def createAWSResources(def asg, def elb ){
         def lcOut = asg.createLaunchConfig()
         this.script.echo "${lcOut}"
     
         def lcOut1 = elb.createLoadBalancer()
         this.script.echo "${lcOut1}"
+         
+         def lcOut2 = tg.createTagertGroup()
+         this.script.echo "${lcOut2}"
+
+
+         def asgOut = asg.createAutoscaling(lcOut2)
+         this.script.echo "${asgOut}"
+
+
+
+        
     //     if (lcOut['response'] == "success"){
     //     this.script.echo "LC created "
     //     }else{
