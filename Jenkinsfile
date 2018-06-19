@@ -15,7 +15,8 @@ pipeline {
 	                            "instanceType": "t2.micro",
 	                            "launchConfigurationName": "my-launch-config",
 	                            "securityGroups": ["sg-879965f8"],
-	                            "userData": "https://s3-us-west-2.amazonaws.com/hudsonbay-test/aws/dev/script/blue-green/R1/scriptViaGroovy.sh ",
+	                            //"userData": "https://s3-us-west-2.amazonaws.com/hudsonbay-test/msp/dev/script/canary/R4/scriptViaGroovy.sh ",
+	                   "userData": "https://s3-us-west-2.amazonaws.com/hudsonbay-test/aws/dev/script/blue-green/R1/scriptViaGroovy.sh",
 	                            "keyName": "HudsonBay-V",
 	                            "iamInstanceProfile": "ec2-s3-RO-role"
                         	],
@@ -28,7 +29,7 @@ pipeline {
 						],
 						
 																					
-                        targetgroup: [
+                        targetGroup: [
                            "jsonBody": [
                                "name": "testTG",
                                "port": "4444",
@@ -54,7 +55,7 @@ pipeline {
                                    "maxSize": "2",
                                    "minSize": "1",
                                    "vpcZoneIdentifier": "subnet-4f628736",
-                                  // "targetGroupARNs":["arn:aws:elasticloadbalancing:us-west-2:702599048949:targetgroup/tg-1/fd89f1ccef7aff8c"]
+                                   //"targetGroupARNs":["arn:aws:elasticloadbalancing:us-west-2:702599048949:targetgroup/tg-1/fd89f1ccef7aff8c"]
                                ],
                        
 					
@@ -72,7 +73,7 @@ pipeline {
                                    "name":"appELB",
                                    "securityGroups": ["sg-879965f8"],
                                    "subnets":["subnet-4f628736", "subnet-4787521d", "subnet-b0dfdbf8"]
-                           ]
+                           ],
                      
                        
 						   
@@ -99,7 +100,7 @@ pipeline {
                                "loadBalancerArn":"arn:aws:elasticloadbalancing:us-west-2:702599048949:loadbalancer/app/cool/77f57bdf01ad5db1",
                                "port": "80",
                                "protocol":"HTTP"
-                           ]
+                           ],
                     
                          		
 		
@@ -112,13 +113,26 @@ pipeline {
 							],
 											
 						],	
-						],
+						]
 													
-                  //  def httpObj = new http.SimpleHTTPBuilder(this,params.launchcofig)
-                    //def output = httpObj.sendRequest()
-                    //echo "${output}"
+                 //   def httpObj = new http.SimpleHTTPBuilder(this,params.launchconfig)
+                   //     httpObj.sendRequest()
+                  //  def output = httpObj.sendRequest()
+                //echo "${output}"
+                     //def httpObj1 = new http.SimpleHTTPBuilder(this,params. targetGroup)
+                    //httpObj1.sendRequest()
+                    
+                     //def httpObj2 = new http.SimpleHTTPBuilder(this,params.asg)
+                    //httpObj2.sendRequest()
+                    
+                     //def httpObj3 = new http.SimpleHTTPBuilder(this,params.elb)
+                   //httpObj3.sendRequest()
+                    
+                     //def httpObj = new http.SimpleHTTPBuilder(this,params.launchcofig)
+                    //httpObj.sendRequest()
+                    
                     def obj= new aws.ami.AMIDeployment(this,params)
-                     obj.deploy()  
+                    obj.deploy()
                 }
             }
         }

@@ -17,8 +17,8 @@ class LoadBalancer implements Serializable {
         lcOut.sendRequest()
  }
  def createtagertgroup(){
-     this.script.echo "in create tg..... ${this.config}"
-     def tgOut = new http.SimpleHTTPBuilder(this.script,this.config.targetgroup)
+     this.script.echo "in create tg..... ${this.config.targetgroup}"
+     def tgOut = new http.SimpleHTTPBuilder(this.script,this.config.targetGroup)
      def out = tgOut.sendRequest()
      this.script.echo "target group:${out}"
      return out['tgARN']
