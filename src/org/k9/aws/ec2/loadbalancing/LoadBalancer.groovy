@@ -32,7 +32,7 @@ class LoadBalancer implements Serializable {
      def listOut = new http.SimpleHTTPBuilder(this.script,this.config.elbListener)
      //def in = listOut.sendRequest()
      //this.script.echo "elb listener:${in}"
-     return in['tgARN', 'elbARN']
+   //  return in['tgARN', 'elbARN']
  }
 
 
